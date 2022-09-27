@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  counter-reset: counterRoman;
+}
+
+table {
+  width: 75vw;
+  height: 75vh;
+}
+
+table,
+th,
+td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+}
+
+.day {
+  width: 15%;
+}
+
+.lunch {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.time {
+  font-weight: bold;
+}
+
+.timeNoRoman {
+  font-weight: bold;
+}
+
+.time::before {
+  display: block;
+  /* Borrowed from w3schools */
+  counter-increment: counterRoman;
+  content: counter(counterRoman, upper-roman) " ";
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
